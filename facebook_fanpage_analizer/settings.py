@@ -37,7 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'social_django',
+    # 'social_django',
+    'social.apps.django_app.default',
     'account',
 )
 
@@ -51,6 +52,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
+
 )
 
 ROOT_URLCONF = 'facebook_fanpage_analizer.urls'
@@ -66,6 +68,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 'social_django.context_processors.backends',
+                # 'social_django.context_processors.login_redirect',
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -104,6 +110,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+LOGIN_REDIRECT_URL = '/'
+
 AUTHENTICATION_BACKENDS = (
     'social.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
@@ -111,3 +119,16 @@ AUTHENTICATION_BACKENDS = (
 
 SOCIAL_AUTH_FACEBOOK_KEY = '131023000787996'
 SOCIAL_AUTH_FACEBOOK_SECRET = '43505dee7a2f320a4adfe5b3300dbfd5'
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email','user_friends','public_profile']
+
+SOCIAL_AUTH_PIPELINE = (
+'social.pipeline.social_auth.social_details',
+'social.pipeline.social_auth.social_uid',
+'social.pipeline.social_auth.auth_allowed',
+'social.pipeline.social_auth.social_user',
+'social.pipeline.user.get_username',
+'social.pipeline.user.create_user',
+'social.pipeline.social_auth.associate_user',
+'social.pipeline.social_auth.load_extra_data',
+'social.pipeline.user.user_details'
+)

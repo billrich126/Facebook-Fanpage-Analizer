@@ -1,3 +1,18 @@
-from django.shortcuts import render
+import json
 
-# Create your views here.
+from django.shortcuts import render_to_response
+from django.template.context import RequestContext
+import urllib.request
+import ssl
+
+from social.apps.django_app.default.models import UserSocialAuth
+
+
+def home(request):
+    context = RequestContext(request,
+                             {'request': request,
+                              'user': request.user,
+                              })
+
+    return render_to_response('home.html',
+                              context_instance=context)
