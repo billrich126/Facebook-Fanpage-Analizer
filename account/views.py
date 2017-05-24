@@ -1,6 +1,6 @@
 import json
 
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.template.context import RequestContext
 import urllib.request
 import ssl
@@ -9,10 +9,11 @@ from social.apps.django_app.default.models import UserSocialAuth
 
 
 def home(request):
-    context = RequestContext(request,
-                             {'request': request,
-                              'user': request.user,
-                              })
-
-    return render_to_response('home.html',
-                              context_instance=context)
+    return render(
+        request,
+        template_name='home.html',
+        context={
+            'request': request,
+            'user': request.user,
+        }
+    )
