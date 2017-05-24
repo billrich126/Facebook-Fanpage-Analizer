@@ -1,0 +1,1 @@
+web: gunicorn facebook_fanpage_analizer.wsgi:application --log-file -
