@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'social_django',
+#    'social_django',
     'social.apps.django_app.default',
     'account',
 )
@@ -51,13 +51,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'social_django.middleware.SocialAuthExceptionMiddleware',
+#    'social_django.middleware.SocialAuthExceptionMiddleware',
 
 )
 
 ROOT_URLCONF = 'facebook_fanpage_analizer.urls'
 
-SOCIAL_AUTH_RAISE_EXCEPTIONS = False
+#SOCIAL_AUTH_RAISE_EXCEPTIONS = False
 
 TEMPLATES = [
     {
@@ -70,8 +70,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'social_django.context_processors.backends',
-                'social_django.context_processors.login_redirect',
+                #'social_django.context_processors.backends',
+                #'social_django.context_processors.login_redirect',
                 'social.apps.django_app.context_processors.backends',
                 'social.apps.django_app.context_processors.login_redirect',
             ],
