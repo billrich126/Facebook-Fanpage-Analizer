@@ -57,6 +57,8 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'facebook_fanpage_analizer.urls'
 
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
