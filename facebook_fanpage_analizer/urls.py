@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+import account.views as my_views
+import social.apps.django_app.views as social_views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'social-auth/', include('social.apps.django_app.urls', namespace='social')),
     url('', include('django.contrib.auth.urls', namespace='auth')),
-    url(r'^$', 'account.views.home', name='home'),
+    url(r'^$', my_views.home, name='home'),
 ]

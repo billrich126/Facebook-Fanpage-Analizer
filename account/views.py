@@ -15,4 +15,4 @@ def home(request):
                               })
 
     return render_to_response('home.html',
-                              context_instance=context)
+                              context=context)
