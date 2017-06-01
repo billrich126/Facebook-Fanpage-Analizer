@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'social_django',
+    'social_django',
     'social.apps.django_app.default',
     'account',
 )
@@ -131,7 +131,7 @@ AUTHENTICATION_BACKENDS = (
                            )
 
 SOCIAL_AUTH_FACEBOOK_KEY = '131475957409367'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'fcd5577437553ccdc57af63443637ec7'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'fcd5577437553ccdc57af63443637ec7 '
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email','user_friends','public_profile']
 
 SOCIAL_AUTH_PIPELINE = (
