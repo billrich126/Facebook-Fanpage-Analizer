@@ -25,7 +25,7 @@ SECRET_KEY = 'rl#-!*-wi$43d^7=+z#@)(^g!m3zdis*z-pyrg)n+b+6%f32jo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['analizer.com']
+ALLOWED_HOSTS = ['analizer.com', 'facebook-fanpage-analizer.herokuapp.com']
 
 
 # Application definition
