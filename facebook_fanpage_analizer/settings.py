@@ -68,8 +68,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                # 'social_django.context_processors.backends',
-                # 'social_django.context_processors.login_redirect',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
                 'social.apps.django_app.context_processors.backends',
                 'social.apps.django_app.context_processors.login_redirect',
             ],
@@ -133,6 +133,7 @@ AUTHENTICATION_BACKENDS = (
 SOCIAL_AUTH_FACEBOOK_KEY = '131475957409367'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'fcd5577437553ccdc57af63443637ec7 '
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email','user_friends','public_profile']
+SOCIAL_AUTH_FACEBOOK_API_VERSION = '2.8'
 
 SOCIAL_AUTH_PIPELINE = (
 'social.pipeline.social_auth.social_details',
